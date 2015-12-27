@@ -6,7 +6,10 @@ MAINTAINER Venkatesan Packiriswamy <pvenkatesan.nj@gmail.com>
 RUN yum -y update --security
 
 # Install JDK 7 (latest edition)
-RUN yum install -y openjdk-8-jdk
+RUN yum install -y java-1.7.0-openjdk
+
+# Clean up YUM when done.
+RUN yum clean all
 
 # Standard SSH port
 EXPOSE 22
